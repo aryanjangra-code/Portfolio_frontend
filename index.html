@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aryan | Full-Stack Software Engineer</title>
+  <meta name="description" content="Aryan Jangra is a Full-Stack Developer and B.Tech CSE student building scalable applications with Node.js, Express, React, and MongoDB.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav__container">
+      <a href="#top" class="nav__logo">Aryan.</a>
+      
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#work" class="nav__link">Work</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+          <i data-lucide="moon" class="moon-icon"></i>
+          <i data-lucide="sun" class="sun-icon"></i>
+        </button>
+        <button class="icon-btn mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
+          <i data-lucide="menu" class="menu-open-icon"></i>
+          <i data-lucide="x" class="menu-close-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-overlay" id="mobile-overlay">
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="#about" class="mobile__link">About</a>
+      <a href="#skills" class="mobile__link">Skills</a>
+      <a href="#work" class="mobile__link">Work</a>
+      <a href="#contact" class="mobile__link">Contact</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <span class="hero__word">Hi, I’m</span> 
+          <span class="hero__word text-gradient">Aryan Jangra.</span>
+        </h1>
+        <p class="hero__sub">
+          A Full-Stack Software Engineer and Computer Science student building robust, scalable systems with Node.js, Express, and MongoDB.
+        </p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">View Work</a>
+          <a href="#about" class="btn btn--secondary">More About Me <i data-lucide="arrow-down" class="icon-sm"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & EXPERIENCE -->
+    <section id="about" class="section about">
+      <div class="section__container">
+        <h2 class="title">Engineering the full stack.</h2>
+        <div class="about__grid">
+          
+          <!-- Bio -->
+          <div class="about__bio reveal-text">
+            <p class="about__lead">
+              I am a B.Tech Computer Science and Engineering student at HNBGU, currently based in Srinagar, Uttarakhand. 
+            </p>
+            <p class="about__text">
+              My programming journey started with single static pages, but my drive to build dynamic, real-world systems led me deep into backend architecture. Today, I write production-ready code, engineer real-time WebSocket communication, and design distributed databases.
+            </p>
+            <p class="about__text">
+              Beyond the MERN stack, I am highly comfortable developing in a Linux environment (Mint XFCE), writing algorithms in C++ and Python, and deploying applications on Netlify and Railway. When I'm not coding, I'm preparing for GATE 2027 and constantly exploring new system design patterns.
+            </p>
+          </div>
+
+          <!-- Experience Timeline -->
+          <div class="about__timeline reveal-text">
+            <h3>Experience & Education</h3>
+            
+            <div class="timeline-item">
+              <div class="timeline-date">July 2026</div>
+              <div class="timeline-content">
+                <h4>Web Development Intern</h4>
+                <p>CodSoft</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">May 2026</div>
+              <div class="timeline-content">
+                <h4>Virtual Intern (Python Tech Stack)</h4>
+                <p>Infosys Springboard</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Current</div>
+              <div class="timeline-content">
+                <h4>B.Tech Computer Science & Engineering</h4>
+                <p>HNBGU, Srinagar, Uttarakhand</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="section__container">
+        <h2 class="title">Tools I build with.</h2>
+        <div class="skills__grid" aria-label="Skills">
+          <div class="skill-tag">JavaScript (ES6+)</div>
+          <div class="skill-tag">Node.js</div>
+          <div class="skill-tag">Express.js</div>
+          <div class="skill-tag">MongoDB / Atlas</div>
+          <div class="skill-tag">React</div>
+          <div class="skill-tag">Socket.io</div>
+          <div class="skill-tag">HTML5 & CSS3</div>
+          <div class="skill-tag">Python</div>
+          <div class="skill-tag">C / C++</div>
+          <div class="skill-tag">Java</div>
+          <div class="skill-tag">Git & GitHub</div>
+          <div class="skill-tag">Linux (Mint)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section work">
+      <div class="section__container">
+        <h2 class="title">Selected work.</h2>
+        <div class="projects">
+
+          <!-- Project 1 -->
+          <article class="project">
+            <div class="project__media">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=70" alt="Data center server architecture" loading="lazy">
+            </div>
+            <div class="project__body">
+              <h3>Universal Distributed Cache</h3>
+              <p>My final-year engineering project. A cache spread across multiple Node.js nodes. It uses consistent hashing to decide which node owns each key, implements LRU eviction to keep nodes bounded, and features a React dashboard to monitor the cluster live.</p>
+              <ul class="pills"><li>Node.js</li><li>React</li><li>System Design</li><li>Consistent Hashing</li></ul>
+              <div class="actions">
+                <span class="badge-dev"><i data-lucide="clock" class="icon-sm"></i> In Development</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project">
+            <div class="project__media">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=70" alt="Code on laptop" loading="lazy">
+            </div>
+            <div class="project__body">
+              <h3>Realtime Group Chat</h3>
+              <p>A highly responsive chat application engineered for seamless real-time communication. Built out from a prototype into a robust platform with a React client, Express backend, Socket.io for instant messaging, and deployed on Railway.</p>
+              <ul class="pills"><li>React</li><li>Node.js</li><li>Socket.io</li><li>Railway</li></ul>
+              <div class="actions">
+                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live Demo</a>
+                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project">
+            <div class="project__media">
+              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1400&q=70" alt="Headphones and music" loading="lazy">
+            </div>
+            <div class="project__body">
+              <h3>Music Streaming Platform</h3>
+              <p>A Spotify-style full-stack application serving dynamic audio content. Features an Express API backed by MongoDB Atlas for user data, and integrates Cloudinary for efficient cloud media storage and streaming.</p>
+              <ul class="pills"><li>Node.js</li><li>MongoDB Atlas</li><li>Cloudinary</li></ul>
+              <div class="actions">
+                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live Demo</a>
+                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (Split Layout) -->
+    <section id="contact" class="section contact">
+      <div class="section__container">
+        <h2 class="title">Let’s build something.</h2>
+        
+        <div class="contact__grid">
+          
+          <!-- Contact Info (Left) -->
+          <div class="contact__info">
+            <p class="contact__lead">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            
+            <ul class="contact__links">
+              <li>
+                <a href="mailto:aryanjangra582006@gmail.com" class="contact__link-item">
+                  <span class="icon-box"><i data-lucide="mail"></i></span>
+                  <div>
+                    <strong>Email</strong>
+                    <span>Reach out anytime</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <div class="contact__link-item">
+                  <span class="icon-box"><i data-lucide="map-pin"></i></span>
+                  <div>
+                    <strong>Location</strong>
+                    <span>Srinagar, Uttarakhand / Haryana</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="https://github.com/aryanjangra-code" target="_blank" rel="noopener" class="contact__link-item">
+                  <span class="icon-box"><i data-lucide="github"></i></span>
+                  <div>
+                    <strong>GitHub</strong>
+                    <span>aryanjangra-code</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/aryan-jangra-00870b292" target="_blank" rel="noopener" class="contact__link-item">
+                  <span class="icon-box"><i data-lucide="linkedin"></i></span>
+                  <div>
+                    <strong>LinkedIn</strong>
+                    <span>Let's connect</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Form (Right) -->
+          <div class="contact__form-wrapper">
+            <form class="form" id="contact-form" novalidate>
+              <label class="field"><span>Name</span><input type="text" name="name" required></label>
+              <label class="field"><span>Email</span><input type="email" name="email" required></label>
+              <label class="field field--full"><span>Subject</span><input type="text" name="subject" required></label>
+              <label class="field field--full"><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+              <button class="btn btn--primary send" type="submit">Send Message <i data-lucide="send" class="icon-sm"></i></button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GSAP & Lucide CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="app.js"></script>
+</body>
+</html>

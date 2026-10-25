@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Private portfolio administration dashboard."
+    >
+
+    <title>Admin Portal — Aryan</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         LOGIN VIEW
+    ========================================== -->
+    <section
+        id="login-view"
+        class="login-screen"
+        aria-labelledby="login-title"
+    >
+        <main class="login-card">
+
+            <a class="brand login-brand" href="#" aria-label="Portfolio admin home">
+                <span class="brand-mark" aria-hidden="true">P</span>
+
+                <span class="brand-copy">
+                    <span class="brand-name">PORTFOLIO</span>
+                    <span class="brand-caption">ADMINISTRATION</span>
+                </span>
+            </a>
+
+            <div class="login-intro">
+                <span class="eyebrow">PRIVATE WORKSPACE</span>
+
+                <h1 id="login-title">Welcome back.</h1>
+
+                <p>
+                    Sign in to manage your inbox and stay connected
+                    with the people reaching out to you.
+                </p>
+            </div>
+
+            <form id="login-form" class="login-form">
+
+                <div class="form-field">
+                    <label for="username">Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <p
+                    id="login-error"
+                    class="login-error"
+                    role="alert"
+                    hidden
+                >
+                    Invalid username or password. Please try again.
+                </p>
+
+                <button class="button button-primary login-submit" type="submit">
+                    <span>Sign in</span>
+                    <span class="button-arrow" aria-hidden="true">↗</span>
+                </button>
+
+            </form>
+
+            <footer class="login-footer">
+                <span class="footer-dot" aria-hidden="true"></span>
+                Private portfolio workspace
+            </footer>
+
+        </main>
+
+        <p class="login-legal">
+            DESIGNED FOR YOUR WORKFLOW
+        </p>
+    </section>
+
+
+    <!-- =========================================
+         DASHBOARD VIEW
+    ========================================== -->
+    <section
+        id="dashboard-view"
+        class="dashboard-view"
+        aria-label="Portfolio administration dashboard"
+        hidden
+    >
+
+        <div class="dashboard-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <a class="brand sidebar-brand" href="#inbox">
+                    <span class="brand-mark" aria-hidden="true">P</span>
+
+                    <span class="brand-copy">
+                        <span class="brand-name">PORTFOLIO</span>
+                        <span class="brand-caption">ADMINISTRATION</span>
+                    </span>
+                </a>
+
+                <div class="sidebar-section-label">
+                    WORKSPACE
+                </div>
+
+                <nav class="sidebar-nav" aria-label="Main navigation">
+
+                    <a
+                        class="nav-link active"
+                        href="#inbox"
+                        aria-current="page"
+                    >
+                        <span class="nav-icon" aria-hidden="true">✉</span>
+                        <span>Inbox</span>
+
+                        <span
+                            id="sidebar-unread-count"
+                            class="nav-count"
+                        >0</span>
+                    </a>
+
+                </nav>
+
+                <div class="sidebar-bottom">
+
+                    <div class="sidebar-note">
+                        <span class="status-indicator" aria-hidden="true"></span>
+
+                        <div>
+                            <p class="sidebar-note-title">Workspace status</p>
+                            <p class="sidebar-note-copy">Local demo environment</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-divider"></div>
+
+                    <p class="sidebar-version">
+                        PORTFOLIO ADMIN <span>·</span> MVP
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- MAIN DASHBOARD CONTENT -->
+            <div class="dashboard-content">
+
+                <!-- TOP HEADER -->
+                <header class="topbar">
+
+                    <div class="breadcrumb">
+                        <span>Workspace</span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current">Inbox</span>
+                    </div>
+
+                    <div class="topbar-actions">
+
+                        <div class="admin-profile">
+                            <span class="admin-avatar" aria-hidden="true">AD</span>
+
+                            <div class="admin-profile-copy">
+                                <span class="admin-name">Administrator</span>
+                                <span class="admin-role">Portfolio owner</span>
+                            </div>
+                        </div>
+
+                        <button
+                            id="logout-button"
+                            class="button button-logout"
+                            type="button"
+                        >
+                            Log out
+                            <span aria-hidden="true">↗</span>
+                        </button>
+
+                    </div>
+
+                </header>
+
+
+                <!-- INBOX CONTENT -->
+                <main id="inbox" class="inbox-content">
+
+                    <div class="page-heading">
+
+                        <div class="page-heading-copy">
+                            <span class="eyebrow">YOUR COMMUNICATIONS</span>
+
+                            <h1>Inbox<span class="heading-period">.</span></h1>
+
+                            <p>
+                                A quiet place to catch up on what's coming your way.
+                            </p>
+                        </div>
+
+                        <div class="date-display">
+                            <span class="date-label">TODAY</span>
+                            <time id="current-date"></time>
+                        </div>
+
+                    </div>
+
+
+                    <!-- SUMMARY STATS -->
+                    <section class="stats-grid" aria-label="Inbox overview">
+
+                        <article class="stat-card">
+                            <span class="stat-label">Total messages</span>
+
+                            <div class="stat-bottom">
+                                <span
+                                    id="total-count"
+                                    class="stat-number"
+                                >0</span>
+
+                                <span class="stat-symbol" aria-hidden="true">↘</span>
+                            </div>
+                        </article>
+
+                        <article class="stat-card stat-card-unread">
+                            <span class="stat-label">Unread messages</span>
+
+                            <div class="stat-bottom">
+                                <span
+                                    id="unread-count"
+                                    class="stat-number"
+                                >0</span>
+
+                                <span class="unread-indicator">
+                                    <span aria-hidden="true"></span>
+                                    Needs attention
+                                </span>
+                            </div>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-label">Read messages</span>
+
+                            <div class="stat-bottom">
+                                <span
+                                    id="read-count"
+                                    class="stat-number"
+                                >0</span>
+
+                                <span class="stat-description">
+                                    Already reviewed
+                                </span>
+                            </div>
+                        </article>
+
+                    </section>
+
+
+                    <!-- MESSAGE LIST -->
+                    <section class="inbox-section" aria-labelledby="messages-heading">
+
+                        <div class="section-heading">
+
+                            <div>
+                                <h2 id="messages-heading">Recent messages</h2>
+
+                                <p>
+                                    Messages received through your portfolio contact form.
+                                </p>
+                            </div>
+
+                            <span
+                                id="message-total-label"
+                                class="message-total-label"
+                            >0 messages</span>
+
+                        </div>
+
+
+                        <ul
+                            id="messages-list"
+                            class="message-list"
+                            aria-label="Contact messages"
+                        >
+                            <!-- Messages are inserted here by admin.js -->
+                        </ul>
+
+
+                        <!-- EMPTY STATE -->
+                        <div id="empty-state" class="empty-state" hidden>
+
+                            <span class="empty-icon" aria-hidden="true">✉</span>
+
+                            <h3>It's quiet in here.</h3>
+
+                            <p>
+                                There are no messages to display right now.
+                                New enquiries will appear here.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <footer class="dashboard-footer">
+                        <span>YOUR PORTFOLIO, YOUR WORKFLOW.</span>
+                        <span>Admin portal <span aria-hidden="true">·</span> MVP</span>
+                    </footer>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

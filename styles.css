@@ -1,0 +1,252 @@
+/* ==========================================================
+   1. CSS VARIABLES (Light & Dark Themes)
+   ========================================================== */
+:root {
+  /* Light Theme Variables */
+  --bg: #ffffff;
+  --bg-rgb: 255, 255, 255;
+  --bg-secondary: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --surface: #ffffff;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --pad: clamp(1.5rem, 5vw, 4rem);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-height: 5rem;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Variables */
+  --bg: #09090b;
+  --bg-rgb: 9, 9, 11;
+  --bg-secondary: #18181b;
+  --text-main: #f8fafc;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+  --border-hover: #3f3f46;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --surface: #121214;
+}
+
+/* ==========================================================
+   2. BASE & RESET
+   ========================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+body { 
+  background: var(--bg); color: var(--text-main); 
+  font: 400 1rem/1.65 var(--font-sans); 
+  -webkit-font-smoothing: antialiased; overflow-x: hidden; 
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+.icon-sm { width: 1.1em; height: 1.1em; vertical-align: middle; }
+
+/* Hidden states for JS reveals */
+.js .nav, .js .hero__word, .js .hero__sub, .js .hero__actions .btn, 
+.js .title, .js .reveal-text, .js .skill-tag, 
+.js .project, .js .contact__info, .js .contact__form-wrapper { visibility: hidden; }
+
+/* ==========================================================
+   3. TYPOGRAPHY & CONTAINERS
+   ========================================================== */
+.section { padding: clamp(4rem, 10vw, 8rem) 0; }
+.section__container { max-width: 1100px; margin: 0 auto; padding: 0 var(--pad); }
+
+.title { 
+  font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; 
+  letter-spacing: -0.03em; line-height: 1.1; 
+  margin-bottom: clamp(2.5rem, 5vw, 4rem); color: var(--text-main);
+}
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--accent) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================
+   4. NAVIGATION
+   ========================================================== */
+.nav { 
+  position: fixed; inset: 0 0 auto; z-index: 50; height: var(--nav-height);
+  background: rgba(var(--bg-rgb), 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.nav__container {
+  max-width: 1100px; margin: 0 auto; padding: 0 var(--pad);
+  height: 100%; display: flex; justify-content: space-between; align-items: center;
+}
+.nav__logo { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
+.nav__links { display: flex; gap: 2.5rem; }
+.nav__link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); transition: color 0.3s var(--ease); }
+.nav__link:hover { color: var(--text-main); }
+.nav__actions { display: flex; gap: 1rem; align-items: center; }
+
+.icon-btn {
+  background: transparent; border: 1px solid var(--border); border-radius: 8px;
+  width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer;
+  color: var(--text-main); transition: all 0.3s var(--ease);
+}
+.icon-btn:hover { border-color: var(--text-muted); background: var(--bg-secondary); }
+.mobile-menu-btn { display: none; }
+
+[data-theme="light"] .sun-icon, [data-theme="dark"] .moon-icon { display: none; }
+.mobile-menu-btn .menu-close-icon { display: none; }
+.mobile-menu-btn.is-open .menu-open-icon { display: none; }
+.mobile-menu-btn.is-open .menu-close-icon { display: block; }
+
+/* Mobile Overlay Menu */
+.mobile-overlay {
+  position: fixed; inset: 0; z-index: 40; background: var(--bg);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  transform: translateY(-100%); transition: transform 0.5s var(--ease);
+}
+.mobile-overlay.is-active { transform: translateY(0); }
+.mobile-nav { display: flex; flex-direction: column; gap: 2.5rem; text-align: center; }
+.mobile__link { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em; }
+
+/* ==========================================================
+   5. HERO
+   ========================================================== */
+.hero { min-height: 100svh; display: flex; align-items: center; padding-top: var(--nav-height); }
+.hero__content { max-width: 1100px; margin: 0 auto; padding: 0 var(--pad); }
+.hero__title { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1.5rem; }
+.hero__sub { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--text-muted); max-width: 55ch; margin-bottom: 2.5rem; line-height: 1.6; }
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.875rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+  transition: all 0.3s var(--ease); cursor: pointer; border: none;
+}
+.btn--primary { background: var(--accent); color: #ffffff; }
+.btn--primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2); }
+.btn--secondary { background: var(--bg-secondary); color: var(--text-main); border: 1px solid var(--border); }
+.btn--secondary:hover { border-color: var(--text-muted); transform: translateY(-2px); }
+
+/* ==========================================================
+   6. ABOUT & EXPERIENCE
+   ========================================================== */
+.about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+.about__lead { font-size: clamp(1.2rem, 2vw, 1.4rem); font-weight: 600; line-height: 1.6; color: var(--text-main); margin-bottom: 1.5rem; }
+.about__text { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+/* Timeline UI */
+.about__timeline h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-main); }
+.timeline-item { position: relative; padding-left: 2rem; margin-bottom: 2rem; }
+.timeline-item::before {
+  content: ''; position: absolute; left: 0; top: 0.4rem; height: 100%; width: 2px;
+  background: var(--border);
+}
+.timeline-item:last-child::before { height: 1.5rem; } /* Stop line on last item */
+.timeline-item::after {
+  content: ''; position: absolute; left: -4px; top: 0.4rem; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
+}
+.timeline-date { font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.timeline-content h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+.timeline-content p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* ==========================================================
+   7. SKILLS
+   ========================================================== */
+.skills { background: var(--bg-secondary); border-block: 1px solid var(--border); }
+.skills__grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+.skill-tag {
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 0.75rem 1.5rem; border-radius: 99px; font-size: 0.95rem; font-weight: 500; color: var(--text-main);
+  transition: all 0.3s var(--ease);
+}
+.skill-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* ==========================================================
+   8. WORK
+   ========================================================== */
+.projects { display: flex; flex-direction: column; gap: clamp(5rem, 8vw, 8rem); }
+.project { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.project:nth-of-type(even) { grid-template-columns: 1fr 1.2fr; }
+.project:nth-of-type(even) .project__media { order: 2; }
+
+.project__media { 
+  aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; 
+  background: var(--bg-secondary); border: 1px solid var(--border);
+}
+.project__media img { width: 100%; height: 120%; object-fit: cover; }
+
+.project h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+.project p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+.pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.pills li { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+
+.actions { display: flex; gap: 1.5rem; align-items: center; }
+.action-link { display: flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.95rem; color: var(--text-main); transition: color 0.3s; }
+.action-link:hover { color: var(--accent); }
+
+.badge-dev {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent); padding: 0.5rem 1rem; border-radius: 99px;
+  font-size: 0.85rem; font-weight: 600;
+}
+
+/* ==========================================================
+   9. CONTACT (Split Grid)
+   ========================================================== */
+.contact__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+
+.contact__lead { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.6; }
+.contact__links { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact__link-item { display: flex; align-items: center; gap: 1rem; color: var(--text-main); transition: transform 0.3s var(--ease); }
+a.contact__link-item:hover { transform: translateX(8px); }
+
+.icon-box { 
+  width: 48px; height: 48px; display: grid; place-items: center;
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  border-radius: 12px; color: var(--accent); transition: all 0.3s var(--ease);
+}
+a.contact__link-item:hover .icon-box { background: var(--accent); color: #fff; border-color: var(--accent); }
+.contact__link-item div { display: flex; flex-direction: column; }
+.contact__link-item strong { font-weight: 600; font-size: 1rem; }
+.contact__link-item span { font-size: 0.9rem; color: var(--text-muted); }
+
+.contact__form-wrapper { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: clamp(2rem, 4vw, 3rem); box-shadow: 0 4px 24px rgba(0,0,0,0.02); }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field--full { grid-column: 1 / -1; }
+.field span { font-size: 0.9rem; font-weight: 600; color: var(--text-main); }
+.field input, .field textarea { 
+  width: 100%; padding: 0.875rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text-main); font-family: inherit; font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s; resize: vertical;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
+.send { grid-column: 1 / -1; justify-self: start; margin-top: 0.5rem; }
+.form__status { grid-column: 1 / -1; min-height: 1.5rem; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+
+/* ==========================================================
+   10. FOOTER
+   ========================================================== */
+.footer { border-top: 1px solid var(--border); padding: 2.5rem 0; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+.footer__container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer__link { transition: color 0.3s; }
+.footer__link:hover { color: var(--text-main); }
+
+/* ==========================================================
+   11. RESPONSIVE QUERIES
+   ========================================================== */
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .mobile-menu-btn { display: grid; }
+  .about__grid, .project, .project:nth-of-type(even), .contact__grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .project:nth-of-type(even) .project__media { order: -1; }
+  .form { grid-template-columns: 1fr; }
+  .contact__form-wrapper { padding: 1.5rem; }
+}
