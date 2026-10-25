@@ -1,7 +1,7 @@
 /* ==========================================================
    app.js: Theme toggle, Mobile Menu, GSAP Animations
    ========================================================== */
-const API_BASE_URL = 'https://your-backend-name.koyeb.app';
+const API_BASE_URL = process.env.backend_url || 'http://localhost:5000';
 document.addEventListener('DOMContentLoaded', () => {
   
   // 1. Initialize Lucide Icons

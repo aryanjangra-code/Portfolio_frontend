@@ -1,6 +1,6 @@
 "use strict";
 
-const API_BASE_URL = 'https://your-backend-name.koyeb.app';
+const API_BASE_URL = process.env.backend_url || 'http://localhost:5000';
 
 /* ================================================
    1. DEMO LOGIN CONFIGURATION
