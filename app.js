@@ -1,7 +1,7 @@
 /* ==========================================================
    app.js: Theme toggle, Mobile Menu, GSAP Animations
    ========================================================== */
-const API_BASE_URL = process.env.backend_url || 'http://localhost:5000';
+const API_BASE_URL = 'https://portfolio-backend-t7so.onrender.com/' || 'http://localhost:5000';
 document.addEventListener('DOMContentLoaded', () => {
   
   // 1. Initialize Lucide Icons

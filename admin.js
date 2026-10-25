@@ -1,6 +1,6 @@
 "use strict";
 
-const API_BASE_URL = process.env.backend_url || 'http://localhost:5000';
+const API_BASE_URL = 'https://portfolio-backend-t7so.onrender.com/' || 'http://localhost:5000';
 
 /* ================================================
    1. DEMO LOGIN CONFIGURATION
