@@ -196,9 +196,9 @@ loginForm.addEventListener("submit", async function (event) {
 
         // Clear error and load dashboard
         clearLoginError();
-        
+
         // Fetch actual messages from backend before showing view
-        await fetchMessagesFromBackend(); 
+        await fetchMessagesFromBackend();
         showView("dashboard");
 
     } catch (error) {
@@ -384,17 +384,20 @@ function createMessageCard(message) {
 
 async function fetchMessagesFromBackend() {
     try {
-        const response = await fetch('/api/admin/messages');
+        const response = await fetch(`${API_BASE_URL}/api/admin/messages`, {
+            method: 'GET',
+            credentials: 'include' // Critical to send the cookie back to Render
+        });
         if (response.ok) {
             messages = await response.json();
-            
+
             // Map the MongoDB _id and createdAt to match your frontend logic
             messages = messages.map(msg => ({
                 ...msg,
                 id: msg._id, // Map MongoDB _id to your existing frontend id property
-                date: msg.createdAt 
+                date: msg.createdAt
             }));
-            
+
             renderMessages();
         } else {
             // If token expired, force logout
