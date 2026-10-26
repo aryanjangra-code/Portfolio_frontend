@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aryan | Full-Stack Software Engineer</title>
-  <meta name="description" content="Aryan Jangra is a Full-Stack Developer and B.Tech CSE student building scalable applications with Node.js, Express, React, and MongoDB.">
+  <meta name="description"
+    content="Aryan Jangra is a Full-Stack Developer and B.Tech CSE student building scalable applications with Node.js, Express, React, and MongoDB.">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,25 +16,26 @@
 
   <!-- Theme Script -->
   <script>
-    (function() {
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
-      
+
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('js');
       }
     })();
   </script>
 </head>
+
 <body>
 
   <!-- NAVIGATION -->
   <header class="nav">
     <div class="nav__container">
       <a href="#top" class="nav__logo">Aryan.</a>
-      
+
       <nav class="nav__links" aria-label="Primary">
         <a href="#about" class="nav__link">About</a>
         <a href="#skills" class="nav__link">Skills</a>
@@ -69,15 +72,19 @@
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">
-          <span class="hero__word">Hi, I’m</span> 
-          <span class="hero__word text-gradient">Aryan Jangra.</span>
+          <span class="hero__word">Hi, I’m</span>
+          <span class="hero__word text-gradient">Aryan .</span>
         </h1>
         <p class="hero__sub">
-          A Full-Stack Software Engineer and Computer Science student building robust, scalable systems with Node.js, Express, and MongoDB.
+          A Backend-Focused Software Engineer. I specialize in designing scalable APIs, distributed systems, and robust
+          database architectures, paired with strong frontend fundamentals.
         </p>
         <div class="hero__actions">
-          <a href="#work" class="btn btn--primary">View Work</a>
           <a href="#about" class="btn btn--secondary">More About Me <i data-lucide="arrow-down" class="icon-sm"></i></a>
+          <a href="#work" class="btn btn--secondary">View Architecture & Code</a>
+          <a href="ARYAN_RESUME_PDF.pdf" target="_blank" rel="noopener" class="btn btn--secondary">
+  <i data-lucide="file-text" class="icon-sm"></i> Download Resume
+</a>
         </div>
       </div>
     </section>
@@ -87,24 +94,27 @@
       <div class="section__container">
         <h2 class="title">Engineering the full stack.</h2>
         <div class="about__grid">
-          
+
           <!-- Bio -->
-          <div class="about__bio reveal-text">
-            <p class="about__lead">
-              I am a B.Tech Computer Science and Engineering student at HNBGU, currently based in Srinagar, Uttarakhand. 
-            </p>
-            <p class="about__text">
-              My programming journey started with single static pages, but my drive to build dynamic, real-world systems led me deep into backend architecture. Today, I write production-ready code, engineer real-time WebSocket communication, and design distributed databases.
-            </p>
-            <p class="about__text">
-              Beyond the MERN stack, I am highly comfortable developing in a Linux environment (Mint XFCE), writing algorithms in C++ and Python, and deploying applications on Netlify and Railway. When I'm not coding, I'm preparing for GATE 2027 and constantly exploring new system design patterns.
-            </p>
-          </div>
+<div class="about__bio reveal-text">
+  <div class="profile-photo-wrapper">
+    <img src="my_photo.png" alt="Aryan" class="profile-photo">
+  </div>
+  <p class="about__lead">
+    I'm a final-year B.Tech Computer Science student at HNBGU in Srinagar, Uttarakhand, currently making the jump from academic concepts to building real-world software.
+  </p>
+  <p class="about__text">
+    I know my way around frontend tools like React, but I am definitely a backend-first developer. I really enjoy figuring out the architecture of a project—whether that means writing clean Node.js and Express APIs, setting up real-time WebSockets, or designing custom caching systems.
+  </p>
+  <p class="about__text">
+  My daily setup is Linux Mint, and I usually rely on nodejs, Python, and MongoDB to get things working behind the scenes. Right now, the bulk of my time is going into building my project Universal Distributed Cache system from scratch—and finding better ways to scale my backend deployments.
+</p>
+</div>
 
           <!-- Experience Timeline -->
           <div class="about__timeline reveal-text">
             <h3>Experience & Education</h3>
-            
+
             <div class="timeline-item">
               <div class="timeline-date">July 2026</div>
               <div class="timeline-content">
@@ -113,13 +123,13 @@
               </div>
             </div>
 
-            <div class="timeline-item">
+            <!-- <div class="timeline-item">
               <div class="timeline-date">May 2026</div>
               <div class="timeline-content">
                 <h4>Virtual Intern (Python Tech Stack)</h4>
                 <p>Infosys Springboard</p>
               </div>
-            </div>
+            </div> -->
 
             <div class="timeline-item">
               <div class="timeline-date">Current</div>
@@ -139,18 +149,21 @@
       <div class="section__container">
         <h2 class="title">Tools I build with.</h2>
         <div class="skills__grid" aria-label="Skills">
-          <div class="skill-tag">JavaScript (ES6+)</div>
+          <!-- Backend & Core First -->
           <div class="skill-tag">Node.js</div>
           <div class="skill-tag">Express.js</div>
           <div class="skill-tag">MongoDB / Atlas</div>
+          <div class="skill-tag">SQL</div>
+          <div class="skill-tag">C / C++</div>
+          <div class="skill-tag">Python</div>
+          <div class="skill-tag">Java</div>
+          <div class="skill-tag">Linux (Mint)</div>
+          <!-- Frontend & Tools Second -->
           <div class="skill-tag">React</div>
+          <div class="skill-tag">JavaScript (ES6+)</div>
           <div class="skill-tag">Socket.io</div>
           <div class="skill-tag">HTML5 & CSS3</div>
-          <div class="skill-tag">Python</div>
-          <div class="skill-tag">C / C++</div>
-          <div class="skill-tag">Java</div>
           <div class="skill-tag">Git & GitHub</div>
-          <div class="skill-tag">Linux (Mint)</div>
         </div>
       </div>
     </section>
@@ -164,12 +177,20 @@
           <!-- Project 1 -->
           <article class="project">
             <div class="project__media">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=70" alt="Data center server architecture" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=1400&q=80"
+                alt="Backend code and architecture visualization" loading="lazy">
             </div>
             <div class="project__body">
               <h3>Universal Distributed Cache</h3>
-              <p>My final-year engineering project. A cache spread across multiple Node.js nodes. It uses consistent hashing to decide which node owns each key, implements LRU eviction to keep nodes bounded, and features a React dashboard to monitor the cluster live.</p>
-              <ul class="pills"><li>Node.js</li><li>React</li><li>System Design</li><li>Consistent Hashing</li></ul>
+              <p>My final-year engineering project. A cache spread across multiple Node.js nodes. It uses consistent
+                hashing to decide which node owns each key, implements LRU eviction to keep nodes bounded, and features
+                a React dashboard to monitor the cluster live.</p>
+              <ul class="pills">
+                <li>Node.js</li>
+                <li>React</li>
+                <li>System Design</li>
+                <li>Consistent Hashing</li>
+              </ul>
               <div class="actions">
                 <span class="badge-dev"><i data-lucide="clock" class="icon-sm"></i> In Development</span>
               </div>
@@ -179,15 +200,24 @@
           <!-- Project 2 -->
           <article class="project">
             <div class="project__media">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=70" alt="Code on laptop" loading="lazy">
+              <img src="chatapp.png" loading="lazy">
             </div>
             <div class="project__body">
               <h3>Realtime Group Chat</h3>
-              <p>A highly responsive chat application engineered for seamless real-time communication. Built out from a prototype into a robust platform with a React client, Express backend, Socket.io for instant messaging, and deployed on Railway.</p>
-              <ul class="pills"><li>React</li><li>Node.js</li><li>Socket.io</li><li>Railway</li></ul>
+              <p>A highly responsive chat application engineered for seamless real-time communication. Built out from a
+                prototype into a robust platform with a React client, Express backend, Socket.io for instant messaging,
+                and deployed on Railway.</p>
+              <ul class="pills">
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Socket.io</li>
+                <li>Railway</li>
+              </ul>
               <div class="actions">
-                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live Demo</a>
-                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live
+                  Demo</a>
+                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i
+                    data-lucide="github"></i> GitHub</a>
               </div>
             </div>
           </article>
@@ -195,15 +225,23 @@
           <!-- Project 3 -->
           <article class="project">
             <div class="project__media">
-              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1400&q=70" alt="Headphones and music" loading="lazy">
+              <img src="musicplayer.png" alt="Music Streaming App placeholder" loading="lazy">
             </div>
             <div class="project__body">
               <h3>Music Streaming Platform</h3>
-              <p>A Spotify-style full-stack application serving dynamic audio content. Features an Express API backed by MongoDB Atlas for user data, and integrates Cloudinary for efficient cloud media storage and streaming.</p>
-              <ul class="pills"><li>Node.js</li><li>MongoDB Atlas</li><li>Cloudinary</li></ul>
+              <p>A Spotify-style full-stack application serving dynamic audio content. Features an Express API backed by
+                MongoDB Atlas for user data, and integrates Cloudinary for efficient cloud media storage and streaming.
+              </p>
+              <ul class="pills">
+                <li>Node.js</li>
+                <li>MongoDB Atlas</li>
+                <li>Cloudinary</li>
+              </ul>
               <div class="actions">
-                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live Demo</a>
-                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i data-lucide="github"></i> GitHub</a>
+                <a class="action-link" href="#" target="_blank" rel="noopener"><i data-lucide="external-link"></i> Live
+                  Demo</a>
+                <a class="action-link" href="https://github.com/aryanjangra-code" target="_blank" rel="noopener"><i
+                    data-lucide="github"></i> GitHub</a>
               </div>
             </div>
           </article>
@@ -216,13 +254,14 @@
     <section id="contact" class="section contact">
       <div class="section__container">
         <h2 class="title">Let’s build something.</h2>
-        
+
         <div class="contact__grid">
-          
+
           <!-- Contact Info (Left) -->
           <div class="contact__info">
-            <p class="contact__lead">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            
+            <p class="contact__lead">I'm currently looking for new opportunities. Whether you have a question or just
+              want to say hi, I'll try my best to get back to you!</p>
+
             <ul class="contact__links">
               <li>
                 <a href="mailto:aryanjangra582006@gmail.com" class="contact__link-item">
@@ -244,7 +283,7 @@
               </li>
               <li>
                 <a href="https://github.com/aryanjangra-code" target="_blank" rel="noopener" class="contact__link-item">
-                  <span class="icon-box"><i data-lucide="github"></i></span>
+                  <span class="icon-box"><i data-lucide="git-compare"></i></span>
                   <div>
                     <strong>GitHub</strong>
                     <span>aryanjangra-code</span>
@@ -252,8 +291,9 @@
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/aryan-jangra-00870b292" target="_blank" rel="noopener" class="contact__link-item">
-                  <span class="icon-box"><i data-lucide="linkedin"></i></span>
+                <a href="https://www.linkedin.com/in/aryan-jangra-00870b292" target="_blank" rel="noopener"
+                  class="contact__link-item">
+                  <span class="icon-box"><i data-lucide="globe-code"></i></span>
                   <div>
                     <strong>LinkedIn</strong>
                     <span>Let's connect</span>
@@ -269,8 +309,10 @@
               <label class="field"><span>Name</span><input type="text" name="name" required></label>
               <label class="field"><span>Email</span><input type="email" name="email" required></label>
               <label class="field field--full"><span>Subject</span><input type="text" name="subject" required></label>
-              <label class="field field--full"><span>Message</span><textarea name="message" rows="4" required></textarea></label>
-              <button class="btn btn--primary send" type="submit">Send Message <i data-lucide="send" class="icon-sm"></i></button>
+              <label class="field field--full"><span>Message</span><textarea name="message" rows="4"
+                  required></textarea></label>
+              <button class="btn btn--primary send" type="submit">Send Message <i data-lucide="send"
+                  class="icon-sm"></i></button>
               <p class="form__status" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -287,4 +329,5 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
